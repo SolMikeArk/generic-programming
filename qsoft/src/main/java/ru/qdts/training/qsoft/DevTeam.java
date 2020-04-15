@@ -19,6 +19,22 @@ public class DevTeam<T extends Developer> implements Iterable<T>{
 		return team.add(memb);
 	}
 	
+	public void clear() {
+		team.clear();
+	}
+	
+	public int size() {
+		return team.size();
+	}
+	
+	public T getMember(int index) {
+		return team.get(index);
+	}
+	
+	public void setMember(int index, T member) {
+		team.set(index, member);
+	}
+	
 	public List<String> writeCode(String req) {
 		var codes = new ArrayList<String>();
 		for(T memb : team) {
@@ -28,8 +44,7 @@ public class DevTeam<T extends Developer> implements Iterable<T>{
 	}
 
 	@Override
-	public Iterator<T> iterator() {
-		// TODO Auto-generated method stub
+	public ListIterator<T> iterator() {
 		return team.listIterator();
 	}
 }
